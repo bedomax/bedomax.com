@@ -20,7 +20,7 @@ export interface WebsiteSchema {
   name: string
   url: string
   description?: string
-  author: {
+  author?: {
     "@type": string
     name: string
   }

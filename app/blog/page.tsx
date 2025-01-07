@@ -3,6 +3,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { Calendar, ArrowRight } from "lucide-react"
+import { getAllPosts } from "@/lib/blog"
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -19,32 +20,8 @@ export const metadata: Metadata = {
   },
 }
 
-// This would typically come from a CMS or markdown files
-const blogPosts = [
-  {
-    id: 1,
-    title: "Getting Started with Next.js 14",
-    excerpt: "Learn how to build modern web applications with Next.js 14 and its new features.",
-    date: "2024-01-15",
-    slug: "getting-started-nextjs-14",
-  },
-  {
-    id: 2,
-    title: "Growth Hacking Strategies for Startups",
-    excerpt: "Discover proven growth hacking techniques that can help your startup scale quickly.",
-    date: "2024-01-10",
-    slug: "growth-hacking-strategies",
-  },
-  {
-    id: 3,
-    title: "The Future of Web Development",
-    excerpt: "Exploring the latest trends and technologies shaping the future of web development.",
-    date: "2024-01-05",
-    slug: "future-web-development",
-  },
-]
-
-export default function BlogPage() {
+export default async function BlogPage() {
+  const blogPosts = await getAllPosts()
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#3B5BDB] via-[#2B4BC0] to-[#1E3A8A] relative overflow-hidden">
       {/* Decorative background shapes */}
@@ -66,7 +43,7 @@ export default function BlogPage() {
           <div className="space-y-8">
             {blogPosts.map((post) => (
               <article
-                key={post.id}
+                key={post.slug}
                 className="bg-white/10 backdrop-blur-sm rounded-lg p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
               >
                 <div className="flex items-center gap-3 text-white/60 text-sm font-light mb-4">

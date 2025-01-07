@@ -6,48 +6,63 @@ Personal website of Bedo - Software Developer, Entrepreneur, and Growth Hacker.
 
 - ✨ Modern and responsive design
 - 🔍 SEO optimized with complete metadata
+- 📝 **File-based blog system with Markdown**
 - 📱 Progressive Web App (PWA) ready
-- ⚡ Performance optimized
+- ⚡ Performance optimized with SSG
 - 🎨 Tailwind CSS design
 - 🔒 Security headers configured
 - 📊 Analytics with Vercel Analytics
+- 🚀 Git-based CMS (write posts in Markdown, push to GitHub)
 
 ## 📋 Project Structure
 
 ```
 bedomax.com/
-├── app/
+├── app/                     # Next.js App Router
 │   ├── layout.tsx          # Main layout with SEO metadata
-│   ├── page.tsx             # Home page
-│   ├── about/
-│   │   └── page.tsx         # About page
-│   ├── projects/
-│   │   └── page.tsx         # Projects page
+│   ├── page.tsx            # Home page
+│   ├── about/page.tsx      # About page
+│   ├── projects/page.tsx   # Projects page
 │   ├── blog/
-│   │   └── page.tsx         # Blog page
-│   ├── contact/
-│   │   └── page.tsx         # Contact page
-│   ├── robots.ts            # Dynamic robots.txt
-│   ├── sitemap.ts           # Dynamic sitemap.xml
-│   ├── manifest.ts          # Manifest.json for PWA
-│   └── globals.css          # Global styles
+│   │   ├── page.tsx        # Blog listing
+│   │   └── [slug]/page.tsx # Individual blog posts (dynamic)
+│   ├── contact/page.tsx    # Contact page
+│   ├── robots.ts           # Dynamic robots.txt
+│   ├── sitemap.ts          # Dynamic sitemap.xml (includes blog posts)
+│   ├── manifest.ts         # Manifest.json for PWA
+│   └── globals.css         # Global styles
 ├── components/
-│   ├── header.tsx           # Navigation component
-│   ├── footer.tsx           # Footer component
-│   ├── hero.tsx             # Hero component
-│   └── theme-provider.tsx   # Theme provider
-├── public/                  # Static files
-├── next.config.mjs          # Next.js configuration
-└── package.json             # Project dependencies
+│   ├── header.tsx          # Navigation component
+│   ├── footer.tsx          # Footer component
+│   ├── hero.tsx            # Hero component
+│   └── theme-provider.tsx  # Theme provider
+├── lib/
+│   ├── blog.ts             # Blog utilities (read posts from filesystem)
+│   ├── seo.ts              # SEO helpers
+│   └── utils.ts            # General utilities
+├── content/
+│   └── blog/               # 📝 Blog posts in Markdown
+│       ├── README.md       # Documentation on how to create posts
+│       ├── ejemplo-post.md # Example post
+│       └── *.md            # Your blog posts here
+├── public/                 # Static files
+├── PROJECT_STRUCTURE.md    # Detailed project documentation
+├── next.config.mjs         # Next.js configuration
+└── package.json            # Project dependencies
 ```
+
+See [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md) for detailed documentation.
 
 ## 🛠️ Technologies Used
 
-- **Next.js 14** - React framework with App Router
-- **TypeScript** - Static typing
-- **Tailwind CSS** - Utility-first CSS framework
+- **Next.js 15** - React framework with App Router
+- **React 19** - UI library
+- **TypeScript 5** - Static typing
+- **Tailwind CSS 4** - Utility-first CSS framework
 - **Radix UI** - Accessible components
 - **Lucide React** - Icons
+- **gray-matter** - Frontmatter parser
+- **remark** - Markdown processor
 - **Vercel Analytics** - Analytics
 
 ## 🔧 Configuration
@@ -176,7 +191,7 @@ About me page with personal information, skills, and experience.
 Portfolio of projects with descriptions and links.
 
 ### Blog (/blog)
-Blog articles listing (ready to integrate with CMS or markdown).
+Blog with file-based CMS. Write posts in Markdown in `content/blog/` and push to GitHub.
 
 ### Contact (/contact)
 Contact form and contact methods.
@@ -230,15 +245,51 @@ This project is private and personal.
 - Website: [bedomax.com](https://bedomax.com)
 - GitHub: [@bedomax](https://github.com/bedomax)
 
+## 📝 How to Add Blog Posts
+
+1. Create a new `.md` file in `content/blog/`:
+```bash
+touch content/blog/my-new-post.md
+```
+
+2. Add frontmatter and content:
+```markdown
+---
+title: "My New Post"
+date: "2025-01-15"
+excerpt: "Brief description of the post"
+author: "Bedo"
+tags: ["JavaScript", "Tutorial"]
+published: true
+---
+
+# Your content here...
+```
+
+3. Commit and push to GitHub:
+```bash
+git add content/blog/my-new-post.md
+git commit -m "feat: add new blog post"
+git push
+```
+
+4. Vercel will automatically deploy and your post will be live!
+
+See [content/blog/README.md](./content/blog/README.md) for detailed documentation.
+
 ## 🔄 Future Updates
 
-- [ ] CMS integration for blog
-- [ ] Comments system
+- [x] File-based blog system with Markdown
+- [x] Dynamic blog post pages
+- [x] SEO for blog posts
+- [ ] Search functionality for blog
+- [ ] Blog post categories/archive pages
+- [ ] Comments system (Giscus)
 - [ ] Newsletter subscription
 - [ ] Dark mode toggle
 - [ ] Multi-language (i18n)
 - [ ] Service Worker for PWA offline
-- [ ] Structured Data (JSON-LD)
+- [ ] RSS feed for blog
 - [ ] Contact form integration with Resend
 
 ---
