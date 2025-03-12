@@ -1,0 +1,32 @@
+# Archivos y carpetas generados por Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Archivos de configuración de Ruby y Bundler
+Gemfile.lock
+.bundle/
+
+# Archivos de compilación de Sass
+assets/*.css
+assets/*.css.map
+
+# Archivos de log y depuración
+*.log
+*.tmp
+*.swp
+
+# Archivos de entorno y credenciales (si aplican)
+.env
+*.bak
+
+# Archivos del sistema (Mac y VSCode)
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Node.js (si usas npm en el proyecto)
+node_modules/
+package-lock.json
+yarn.lock

@@ -1,0 +1,1 @@
+# bedomax.com

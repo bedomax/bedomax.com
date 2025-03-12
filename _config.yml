@@ -1,0 +1,9 @@
+title: "Mi Sitio con Bedomax.com"
+description: "Un sitio hecho desde cero con Jekyll"
+author: "Bedomax"
+baseurl: "" # Déjalo vacío si es el sitio principal
+url: "http://localhost:4000" # Cambia cuando lo publiques
+permalink: /:title/ # URLs amigables
+sass:
+  sass_dir: _sass
+  style: compressed # O usa "expanded" para ver el CSS legible
