@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | {{ site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
-<body>
-    <header>
-        <h1><a href="/">{{ site.title }}</a></h1>
+<body class="bg-gray-100 text-gray-900 font-sans">
+
+    <header class="bg-blue-600 text-white py-4 text-center shadow-lg">
+        <h1 class="text-3xl font-bold">
+            <a href="/" class="hover:text-gray-300">{{ site.title }}</a>
+        </h1>
     </header>
 
-    <main>
+    <main class="container mx-auto px-4 py-10">
         {{ content }}
     </main>
 
-    <footer>
+    <footer class="bg-gray-800 text-white text-center py-4 mt-10">
         <p>&copy; {{ site.time | date: "%Y" }} - {{ site.author }}</p>
     </footer>
+
 </body>
 </html>
