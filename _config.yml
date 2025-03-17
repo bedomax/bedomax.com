@@ -13,3 +13,9 @@ collections:
   pages:
     output: true
     permalink: /:path/
+
+plugins:
+  - jekyll-postcss
+
+postcss:
+  cache: false

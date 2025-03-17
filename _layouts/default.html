@@ -6,28 +6,57 @@
   <title>{{ page.title }} | {{ site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans">
+<body class="bg-gray-100 text-gray-900 font-sans antialiased">
 
-<header class="bg-blue-600 text-white py-4 shadow-lg">
-  <nav class="container mx-auto flex justify-between items-center px-4">
-    <a href="/" class="text-2xl font-bold hover:text-gray-300">{{ site.title }}</a>
-      <ul class="flex space-x-6">
-        <li><a href="/about_me" class="hover:text-gray-300">About</a></li>
-        <li><a href="/projects" class="hover:text-gray-300">Projects</a></li>
-        <li><a href="/blog" class="hover:text-gray-300">Blog</a></li>
-        <li><a href="/photography" class="hover:text-gray-300">Photography</a></li>
-        <li><a href="/contact" class="hover:text-gray-300">Contact</a></li>
-      </ul>
-  </nav>
+<!-- Header -->
+<header class="bg-white shadow">
+  <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+    <a href="/" class="text-3xl font-bold text-blue-600 hover:text-blue-800">
+      {{ site.title }}
+    </a>
+    <nav class="hidden md:flex space-x-6">
+      <a href="/about_me" class="text-gray-700 hover:text-blue-600">About</a>
+      <a href="/projects" class="text-gray-700 hover:text-blue-600">Projects</a>
+      <a href="/blog" class="text-gray-700 hover:text-blue-600">Blog</a>
+      <a href="/photography" class="text-gray-700 hover:text-blue-600">Photography</a>
+      <a href="/contact" class="text-gray-700 hover:text-blue-600">Contact</a>
+    </nav>
+    <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="md:hidden bg-white shadow-lg">
+    <nav class="px-4 py-6 space-y-4">
+      <a href="/about_me" class="block text-gray-700 hover:text-blue-600">About</a>
+      <a href="/projects" class="block text-gray-700 hover:text-blue-600">Projects</a>
+      <a href="/blog" class="block text-gray-700 hover:text-blue-600">Blog</a>
+      <a href="/photography" class="block text-gray-700 hover:text-blue-600">Photography</a>
+      <a href="/contact" class="block text-gray-700 hover:text-blue-600">Contact</a>
+    </nav>
+  </div>
 </header>
 
+<!-- Main Content -->
 <main class="container mx-auto px-4 py-10">
   {{ content }}
 </main>
 
-<footer class="bg-gray-800 text-white text-center py-4 mt-10">
+<!-- Footer -->
+<footer class="bg-gray-800 text-white text-center py-4">
   <p>&copy; {{ site.time | date: "%Y" }} - {{ site.author }}</p>
 </footer>
+
+<!-- Mobile Menu Toggle Script -->
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
 
 </body>
 </html>
