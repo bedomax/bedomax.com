@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} | {{ site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 <body class="bg-gray-100 text-gray-900 font-sans">
 
-    <header class="bg-blue-600 text-white py-4 text-center shadow-lg">
-        <h1 class="text-3xl font-bold">
-            <a href="/" class="hover:text-gray-300">{{ site.title }}</a>
-        </h1>
-    </header>
+<header class="bg-blue-600 text-white py-4 shadow-lg">
+  <nav class="container mx-auto flex justify-between items-center px-4">
+    <a href="/" class="text-2xl font-bold hover:text-gray-300">{{ site.title }}</a>
+      <ul class="flex space-x-6">
+        <li><a href="/about_me" class="hover:text-gray-300">About</a></li>
+        <li><a href="/projects" class="hover:text-gray-300">Projects</a></li>
+        <li><a href="/blog" class="hover:text-gray-300">Blog</a></li>
+        <li><a href="/photography" class="hover:text-gray-300">Photography</a></li>
+        <li><a href="/contact" class="hover:text-gray-300">Contact</a></li>
+      </ul>
+  </nav>
+</header>
 
-    <main class="container mx-auto px-4 py-10">
-        {{ content }}
-    </main>
+<main class="container mx-auto px-4 py-10">
+  {{ content }}
+</main>
 
-    <footer class="bg-gray-800 text-white text-center py-4 mt-10">
-        <p>&copy; {{ site.time | date: "%Y" }} - {{ site.author }}</p>
-    </footer>
+<footer class="bg-gray-800 text-white text-center py-4 mt-10">
+  <p>&copy; {{ site.time | date: "%Y" }} - {{ site.author }}</p>
+</footer>
 
 </body>
 </html>
