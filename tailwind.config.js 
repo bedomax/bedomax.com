@@ -1,17 +1,17 @@
 module.exports = {
   content: [
-    './_drafts/**/*.html',
     './_includes/**/*.html',
     './_layouts/**/*.html',
-    './_posts/*.md',
-    './*.md',
-    './*.html',
-  ],
+    './assets/**/*.scss',
   theme: {
     extend: {
       fontFamily: {
         sans: ['Lato', 'sans-serif'],
         heading: ['Montserrat', 'sans-serif'],
+      },
+      colors: {
+        primary: '#1E40AF',
+        secondary: '#FACC15',
       },
     },
   },

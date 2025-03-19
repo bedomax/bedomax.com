@@ -1,11 +1,6 @@
 @tailwind base;
 @tailwind components;
-body {
-    font-family: 'Lato', sans-serif;
-}
-
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-}
 @tailwind utilities;
 
+/* Importa el SCSS procesado */
+@import "./style.css";

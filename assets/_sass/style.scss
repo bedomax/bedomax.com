@@ -1,0 +1,12 @@
+@use "variables";  // Importamos las variables primero
+// Ahora puedes usar las variables en el resto del SCSS
+body {
+  font-family: var(--font-body);
+  background-color: var(--primary);
+  color: white;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--secondary);
+}
