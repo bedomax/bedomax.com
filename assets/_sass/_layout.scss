@@ -1,0 +1,5 @@
+@use "variables";  // Importamos las variables primero
+// Ahora puedes usar las variables en el resto del SCSS
+body {
+  background-color: BLUE;
+}

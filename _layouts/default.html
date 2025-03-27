@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} | {{ site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,11 +14,16 @@
 <body>
 
 <!-- Header -->
-<header class="shadow">
-
+<header class="w-full bg-primary text-white py-4">
+  <div class="container mx-auto flex justify-between items-center px-6">
+    <a href="/" class="text-2xl font-heading font-bold">
+      <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="Logo de Mi Sitio" class="w-32">
+    </a>
+    </nav>
+  </div>
 </header>
 <!-- Main Content -->
-<main class="container mx-auto px-4 py-10">
+<main class="container mx-auto px-4 py-10 ">
   {{ content }}
 </main>
 
