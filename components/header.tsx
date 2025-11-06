@@ -1,8 +1,13 @@
+"use client"
+
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export function Header() {
+  const pathname = usePathname()
+  
   const navItems = [
-    { name: "HOME", href: "/", active: true },
+    { name: "HOME", href: "/" },
     { name: "ABOUT ME", href: "/about" },
     { name: "PROJECTS", href: "/projects" },
     { name: "BLOG", href: "/blog" },
@@ -19,16 +24,19 @@ export function Header() {
 
       {/* Navigation */}
       <nav className="flex flex-col items-end gap-6">
-        {navItems.map((item) => (
-          <Link
-            key={item.name}
-            href={item.href}
-            className="relative text-white text-sm font-light tracking-wide hover:opacity-80 transition-opacity"
-          >
-            {item.name}
-            {item.active && <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#F5C542]" />}
-          </Link>
-        ))}
+        {navItems.map((item) => {
+          const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
+          return (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="relative text-white text-sm font-light tracking-wide hover:opacity-80 transition-opacity"
+            >
+              {item.name}
+              {isActive && <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#F5C542]" />}
+            </Link>
+          )
+        })}
       </nav>
     </header>
   )

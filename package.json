@@ -1,7 +1,10 @@
 {
-  "name": "my-v0-project",
-  "version": "0.1.0",
+  "name": "bedomax-website",
+  "version": "1.0.0",
   "private": true,
+  "description": "Personal website of Bedo - Software Developer, Entrepreneur, and Growth Hacker",
+  "author": "Bedo",
+  "homepage": "https://bedomax.com",
   "scripts": {
     "build": "next build",
     "dev": "next dev",

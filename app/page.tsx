@@ -1,6 +1,22 @@
+import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { Footer } from "@/components/footer"
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Welcome to Bedo's personal website - Software Developer, Entrepreneur, and Growth Hacker. Discover my projects, ideas, and everything that keeps me creating.",
+  openGraph: {
+    title: "Bedo - Software Developer",
+    description: "Welcome to Bedo's personal website - Software Developer, Entrepreneur, and Growth Hacker.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bedo - Software Developer",
+    description: "Welcome to Bedo's personal website - Software Developer, Entrepreneur, and Growth Hacker.",
+  },
+}
 
 export default function Home() {
   return (

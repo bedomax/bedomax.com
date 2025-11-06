@@ -82,7 +82,7 @@
 }
 
 @theme inline {
-  /* Actualizando la fuente principal a Poppins */
+  /* Updating main font to Poppins */
   --font-sans: var(--font-poppins);
   --font-mono: var(--font-geist-mono);
   --color-background: var(--background);
