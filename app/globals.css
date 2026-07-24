@@ -4,7 +4,13 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Custom color palette for personal website */
+  /* Brand tokens from Figma (bedomax.com design file) */
+  --brand-500: #1847bf; /* primary/500 — page background */
+  --brand-700: #194094; /* primary/700 — footer bar */
+  --brand-900: #1a3375; /* primary/900 */
+  --brand-accent: #ffd458; /* accent/400 — logo, active nav indicator */
+
+  /* Legacy palette (pre-Figma pages) */
   --royal-blue: #3b5bdb;
   --dark-blue: #2b4bc0;
   --deep-blue: #1e3a8a;
@@ -82,9 +88,14 @@
 }
 
 @theme inline {
-  /* Updating main font to Poppins */
-  --font-sans: var(--font-poppins);
+  /* Lato for body/UI, Montserrat for headings (per Figma) */
+  --font-sans: var(--font-lato);
+  --font-heading: var(--font-montserrat);
   --font-mono: var(--font-geist-mono);
+  --color-brand-500: var(--brand-500);
+  --color-brand-700: var(--brand-700);
+  --color-brand-900: var(--brand-900);
+  --color-brand-accent: var(--brand-accent);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
