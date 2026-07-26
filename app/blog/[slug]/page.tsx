@@ -78,32 +78,24 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#3B5BDB] via-[#2B4BC0] to-[#1E3A8A] relative overflow-hidden">
+    <div className="relative flex min-h-screen flex-col overflow-hidden bg-brand-500">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      {/* Decorative background shapes */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#2B4BC0] rounded-full opacity-30 blur-3xl" />
-        <div className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-[#1E3A8A] rounded-full opacity-40 blur-3xl" />
-        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-[#2B4BC0] rounded-full opacity-25 blur-3xl" />
-      </div>
 
       <Header />
 
-      <main className="relative z-10 flex-1 px-8 py-32">
-        <article className="max-w-4xl mx-auto">
-          {/* Back to blog link */}
+      <main className="relative z-10 flex-1 px-4 py-10 sm:px-6 sm:py-16 md:px-8 md:py-20">
+        <article className="mx-auto max-w-4xl">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors mb-8 text-sm font-light"
+            className="mb-6 inline-flex items-center gap-2 text-sm text-white/70 transition-colors hover:text-white sm:mb-8"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="h-4 w-4" />
             Back to blog
           </Link>
 
-          {/* Post header */}
-          <header className="mb-12">
-            <div className="flex items-center gap-3 text-white/60 text-sm font-light mb-6">
-              <Calendar className="w-4 h-4" />
+          <header className="mb-8 sm:mb-12">
+            <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-white/60 sm:mb-6">
+              <Calendar className="h-4 w-4 shrink-0" />
               <time dateTime={post.date}>
                 {new Date(post.date).toLocaleDateString("en-US", {
                   year: "numeric",
@@ -119,20 +111,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               )}
             </div>
 
-            <h1 className="text-white text-5xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">
+            <h1 className="mb-4 font-heading text-3xl font-bold leading-tight tracking-tight text-white sm:mb-6 sm:text-5xl md:text-6xl">
               {post.title}
             </h1>
 
-            <p className="text-white/80 text-xl font-light leading-relaxed">{post.excerpt}</p>
+            <p className="text-base leading-relaxed text-white/80 sm:text-xl">{post.excerpt}</p>
 
-            {/* Tags */}
             {post.tags && post.tags.length > 0 && (
-              <div className="flex items-center gap-2 mt-6 flex-wrap">
-                <Tag className="w-4 h-4 text-white/60" />
+              <div className="mt-5 flex flex-wrap items-center gap-2 sm:mt-6">
+                <Tag className="h-4 w-4 text-white/60" />
                 {post.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-white/70 text-sm font-light border border-white/20"
+                    className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm text-white/70 backdrop-blur-sm"
                   >
                     {tag}
                   </span>
@@ -141,18 +132,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             )}
           </header>
 
-          {/* Post content */}
           <div
-            className="prose prose-invert prose-lg max-w-none
-              prose-headings:text-white prose-headings:font-bold
-              prose-p:text-white/90 prose-p:font-light prose-p:leading-relaxed
-              prose-a:text-[#F5C542] prose-a:no-underline hover:prose-a:text-[#F5C542]/80
-              prose-strong:text-white prose-strong:font-semibold
-              prose-code:text-[#F5C542] prose-code:bg-white/10 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
-              prose-pre:bg-white/10 prose-pre:border prose-pre:border-white/20
+            className="prose prose-invert prose-base sm:prose-lg max-w-none
+              prose-headings:font-heading prose-headings:font-bold prose-headings:text-white
+              prose-p:leading-relaxed prose-p:text-white/90
+              prose-a:text-brand-accent prose-a:no-underline hover:prose-a:text-brand-accent/80
+              prose-strong:font-semibold prose-strong:text-white
+              prose-code:rounded prose-code:bg-white/10 prose-code:px-1 prose-code:py-0.5 prose-code:text-brand-accent
+              prose-pre:border prose-pre:border-white/20 prose-pre:bg-white/10
               prose-ul:text-white/90 prose-ol:text-white/90
-              prose-li:text-white/90 prose-li:font-light
-              prose-blockquote:text-white/80 prose-blockquote:border-l-[#F5C542]
+              prose-li:text-white/90
+              prose-blockquote:border-l-brand-accent prose-blockquote:text-white/80
               prose-img:rounded-lg prose-img:border prose-img:border-white/20"
             dangerouslySetInnerHTML={{ __html: post.content || "" }}
           />

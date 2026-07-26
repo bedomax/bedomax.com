@@ -24,37 +24,31 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#3B5BDB] via-[#2B4BC0] to-[#1E3A8A] relative overflow-hidden">
-      {/* Decorative background shapes */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#2B4BC0] rounded-full opacity-30 blur-3xl" />
-        <div className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-[#1E3A8A] rounded-full opacity-40 blur-3xl" />
-        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-[#2B4BC0] rounded-full opacity-25 blur-3xl" />
-      </div>
-
+    <div className="relative flex min-h-screen flex-col overflow-hidden bg-brand-500">
       <Header />
-      
-      <main className="relative z-10 flex-1 flex items-center justify-center px-8 py-32">
-        <div className="max-w-2xl w-full">
-          <h1 className="text-white text-6xl font-extrabold mb-4 tracking-tight">Get In Touch</h1>
-          <p className="text-white/70 text-lg font-light mb-12 max-w-xl">
-            Whether you have a project in mind, a question, or just want to connect, 
-            I'd love to hear from you. Let's build something amazing together.
+
+      <main className="relative z-10 flex flex-1 items-start justify-center px-4 py-10 sm:px-6 sm:py-16 md:items-center md:px-8 md:py-20">
+        <div className="w-full max-w-2xl">
+          <h1 className="mb-3 font-heading text-4xl font-bold tracking-tight text-white sm:mb-4 sm:text-5xl md:text-6xl">
+            Get In Touch
+          </h1>
+          <p className="mb-8 max-w-xl text-base text-white/70 sm:mb-12 sm:text-lg">
+            Whether you have a project in mind, a question, or just want to connect, I&apos;d love to hear from you.
+            Let&apos;s build something amazing together.
           </p>
 
-          <div className="space-y-8">
-            {/* Contact Methods */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-6 sm:space-y-8">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
               <a
                 href="mailto:i@bedomax.com"
-                className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 flex items-center gap-4"
+                className="flex items-center gap-4 rounded-lg border border-white/20 bg-white/10 p-5 backdrop-blur-sm transition-all duration-300 hover:bg-white/15 sm:p-6"
               >
-                <div className="w-12 h-12 rounded-full bg-[#F5C542]/20 flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-[#F5C542]" />
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-accent/20">
+                  <Mail className="h-6 w-6 text-brand-accent" />
                 </div>
                 <div>
-                  <h2 className="text-white text-lg font-semibold mb-1">Email</h2>
-                  <p className="text-white/70 text-sm font-light">i@bedomax.com</p>
+                  <h2 className="mb-1 text-lg font-semibold text-white">Email</h2>
+                  <p className="text-sm text-white/70">i@bedomax.com</p>
                 </div>
               </a>
 
@@ -62,22 +56,21 @@ export default function ContactPage() {
                 href="https://www.linkedin.com/in/bedomax/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 flex items-center gap-4"
+                className="flex items-center gap-4 rounded-lg border border-white/20 bg-white/10 p-5 backdrop-blur-sm transition-all duration-300 hover:bg-white/15 sm:p-6"
               >
-                <div className="w-12 h-12 rounded-full bg-[#F5C542]/20 flex items-center justify-center">
-                  <MessageSquare className="w-6 h-6 text-[#F5C542]" />
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-accent/20">
+                  <MessageSquare className="h-6 w-6 text-brand-accent" />
                 </div>
                 <div>
-                  <h2 className="text-white text-lg font-semibold mb-1">LinkedIn</h2>
-                  <p className="text-white/70 text-sm font-light">Connect with me</p>
+                  <h2 className="mb-1 text-lg font-semibold text-white">LinkedIn</h2>
+                  <p className="text-sm text-white/70">Connect with me</p>
                 </div>
               </a>
             </div>
 
-            {/* Contact Form */}
-            <form className="bg-white/10 backdrop-blur-sm rounded-lg p-8 border border-white/20 space-y-6">
+            <form className="space-y-5 rounded-lg border border-white/20 bg-white/10 p-5 backdrop-blur-sm sm:space-y-6 sm:p-8">
               <div className="space-y-2">
-                <label htmlFor="name" className="block text-white text-sm font-medium">
+                <label htmlFor="name" className="block text-sm font-medium text-white">
                   Name
                 </label>
                 <input
@@ -85,13 +78,13 @@ export default function ContactPage() {
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-[#F5C542] focus:border-transparent transition-all"
+                  className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-white/50 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-brand-accent"
                   placeholder="Your name"
                 />
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="email" className="block text-white text-sm font-medium">
+                <label htmlFor="email" className="block text-sm font-medium text-white">
                   Email
                 </label>
                 <input
@@ -99,13 +92,13 @@ export default function ContactPage() {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-[#F5C542] focus:border-transparent transition-all"
+                  className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-white/50 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-brand-accent"
                   placeholder="your@email.com"
                 />
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="message" className="block text-white text-sm font-medium">
+                <label htmlFor="message" className="block text-sm font-medium text-white">
                   Message
                 </label>
                 <textarea
@@ -113,21 +106,21 @@ export default function ContactPage() {
                   name="message"
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-[#F5C542] focus:border-transparent transition-all resize-none"
+                  className="w-full resize-none rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-white/50 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-brand-accent"
                   placeholder="Tell me about your project or just say hello..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#F5C542] text-[#1E3A8A] px-6 py-3 rounded-lg font-semibold hover:bg-[#F5C542]/90 transition-colors flex items-center justify-center gap-2"
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-brand-accent px-6 py-3 font-semibold text-brand-navy transition-colors hover:bg-brand-accent/90"
               >
-                <Send className="w-5 h-5" />
+                <Send className="h-5 w-5" />
                 Send Message
               </button>
             </form>
 
-            <p className="text-white/60 text-sm font-light text-center">
+            <p className="text-center text-sm text-white/60">
               I typically respond within 24-48 hours. Looking forward to hearing from you!
             </p>
           </div>

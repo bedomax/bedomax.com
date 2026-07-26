@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   },
 }
 
-// This would typically come from a CMS or database
 const projects = [
   {
     id: 1,
@@ -52,39 +51,32 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#3B5BDB] via-[#2B4BC0] to-[#1E3A8A] relative overflow-hidden">
-      {/* Decorative background shapes */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#2B4BC0] rounded-full opacity-30 blur-3xl" />
-        <div className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-[#1E3A8A] rounded-full opacity-40 blur-3xl" />
-        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-[#2B4BC0] rounded-full opacity-25 blur-3xl" />
-      </div>
-
+    <div className="relative flex min-h-screen flex-col overflow-hidden bg-brand-500">
       <Header />
-      
-      <main className="relative z-10 flex-1 px-8 py-32">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-white text-6xl font-extrabold mb-4 tracking-tight">Projects</h1>
-          <p className="text-white/70 text-lg font-light mb-12 max-w-2xl">
-            A collection of projects I've built, each representing a different challenge and learning experience.
+
+      <main className="relative z-10 flex-1 px-4 py-10 sm:px-6 sm:py-16 md:px-8 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <h1 className="mb-3 font-heading text-4xl font-bold tracking-tight text-white sm:mb-4 sm:text-5xl md:text-6xl">
+            Projects
+          </h1>
+          <p className="mb-8 max-w-2xl text-base text-white/70 sm:mb-12 sm:text-lg">
+            A collection of projects I&apos;ve built, each representing a different challenge and learning experience.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
             {projects.map((project) => (
               <div
                 key={project.id}
-                className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
+                className="rounded-lg border border-white/20 bg-white/10 p-5 backdrop-blur-sm transition-all duration-300 hover:bg-white/15 sm:p-6"
               >
-                <h2 className="text-white text-2xl font-bold mb-3">{project.title}</h2>
-                <p className="text-white/80 text-sm font-light mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, index) => (
+                <h2 className="mb-3 font-heading text-xl font-bold text-white sm:text-2xl">{project.title}</h2>
+                <p className="mb-4 text-sm leading-relaxed text-white/80">{project.description}</p>
+
+                <div className="mb-6 flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
                     <span
-                      key={index}
-                      className="px-3 py-1 bg-[#F5C542]/20 text-[#F5C542] text-xs font-medium rounded-full"
+                      key={tech}
+                      className="rounded-full bg-brand-accent/20 px-3 py-1 text-xs font-medium text-brand-accent"
                     >
                       {tech}
                     </span>
@@ -97,9 +89,9 @@ export default function ProjectsPage() {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm font-light"
+                      className="flex items-center gap-2 text-sm text-white/70 transition-colors hover:text-white"
                     >
-                      <Github className="w-4 h-4" />
+                      <Github className="h-4 w-4" />
                       <span>Code</span>
                     </a>
                   )}
@@ -108,9 +100,9 @@ export default function ProjectsPage() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm font-light"
+                      className="flex items-center gap-2 text-sm text-white/70 transition-colors hover:text-white"
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="h-4 w-4" />
                       <span>Live</span>
                     </a>
                   )}
@@ -119,10 +111,8 @@ export default function ProjectsPage() {
             ))}
           </div>
 
-          <div className="mt-12 text-center">
-            <p className="text-white/60 text-sm font-light">
-              More projects coming soon...
-            </p>
+          <div className="mt-10 text-center sm:mt-12">
+            <p className="text-sm text-white/60">More projects coming soon...</p>
           </div>
         </div>
       </main>
