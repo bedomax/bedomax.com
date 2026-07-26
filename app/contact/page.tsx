@@ -6,14 +6,18 @@ import { Mail, MessageSquare, Send } from "lucide-react"
 export const metadata: Metadata = {
   title: "Contact",
   description: "Get in touch with Bedo. Whether you have a project in mind, a question, or just want to connect, I'd love to hear from you.",
+  alternates: {
+    canonical: "/contact",
+  },
   openGraph: {
-    title: "Contact | Bedo - Software Developer",
+    title: "Contact | Bedo - Software Engineer",
     description: "Get in touch with Bedo. Whether you have a project in mind or just want to connect, I'd love to hear from you.",
+    url: "/contact",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact | Bedo - Software Developer",
+    title: "Contact | Bedo - Software Engineer",
     description: "Get in touch with Bedo. Whether you have a project in mind or just want to connect, I'd love to hear from you.",
   },
 }
@@ -42,20 +46,20 @@ export default function ContactPage() {
             {/* Contact Methods */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <a
-                href="mailto:hello@bedomax.com"
+                href="mailto:i@bedomax.com"
                 className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 flex items-center gap-4"
               >
                 <div className="w-12 h-12 rounded-full bg-[#F5C542]/20 flex items-center justify-center">
                   <Mail className="w-6 h-6 text-[#F5C542]" />
                 </div>
                 <div>
-                  <h3 className="text-white text-lg font-semibold mb-1">Email</h3>
-                  <p className="text-white/70 text-sm font-light">hello@bedomax.com</p>
+                  <h2 className="text-white text-lg font-semibold mb-1">Email</h2>
+                  <p className="text-white/70 text-sm font-light">i@bedomax.com</p>
                 </div>
               </a>
 
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/bedomax/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 flex items-center gap-4"
@@ -64,7 +68,7 @@ export default function ContactPage() {
                   <MessageSquare className="w-6 h-6 text-[#F5C542]" />
                 </div>
                 <div>
-                  <h3 className="text-white text-lg font-semibold mb-1">LinkedIn</h3>
+                  <h2 className="text-white text-lg font-semibold mb-1">LinkedIn</h2>
                   <p className="text-white/70 text-sm font-light">Connect with me</p>
                 </div>
               </a>

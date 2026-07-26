@@ -4,9 +4,9 @@ export default function manifest(): MetadataRoute.Manifest {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bedomax.com'
   
   return {
-    name: 'Bedo - Software Developer',
+    name: 'Bedo - Software Engineer',
     short_name: 'Bedo',
-    description: 'Personal website of Bedo - Software Developer, Entrepreneur, and Growth Hacker',
+    description: 'Personal website of Bedo - Software Engineer, Entrepreneur, and Growth Hacker',
     start_url: '/',
     display: 'standalone',
     background_color: '#1E3A8A',
@@ -29,7 +29,7 @@ export default function manifest(): MetadataRoute.Manifest {
       },
     ],
     categories: ['business', 'productivity', 'developer'],
-    lang: 'es',
+    lang: 'en',
     orientation: 'portrait-primary',
     scope: '/',
   }

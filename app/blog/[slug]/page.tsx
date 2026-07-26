@@ -32,9 +32,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
+      url: `/blog/${slug}`,
       type: "article",
       publishedTime: post.date,
       authors: post.author ? [post.author] : undefined,
@@ -57,8 +61,25 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound()
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://bedomax.com"
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    url: `${siteUrl}/blog/${slug}`,
+    ...(post.image && { image: post.image }),
+    author: {
+      "@type": "Person",
+      name: post.author || "Bedo",
+      url: siteUrl,
+    },
+  }
+
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#3B5BDB] via-[#2B4BC0] to-[#1E3A8A] relative overflow-hidden">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       {/* Decorative background shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#2B4BC0] rounded-full opacity-30 blur-3xl" />
@@ -84,7 +105,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="flex items-center gap-3 text-white/60 text-sm font-light mb-6">
               <Calendar className="w-4 h-4" />
               <time dateTime={post.date}>
-                {new Date(post.date).toLocaleDateString("es-ES", {
+                {new Date(post.date).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",

@@ -1,7 +1,7 @@
 ---
-title: "How to structure a blog with Next.js 15"
+title: "How to structure a blog with Next.js"
 date: "2025-01-15"
-excerpt: "Learn how to create a scalable blog system using Markdown files and Next.js 15 with App Router."
+excerpt: "Learn how to create a scalable blog system using Markdown files and Next.js with the App Router."
 author: "Bedo"
 tags: ["Next.js", "React", "Tutorial", "Web Development"]
 published: true
