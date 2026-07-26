@@ -8,14 +8,18 @@ import { getAllPosts } from "@/lib/blog"
 export const metadata: Metadata = {
   title: "Blog",
   description: "Read my thoughts on software development, entrepreneurship, growth hacking, and the latest trends in technology.",
+  alternates: {
+    canonical: "/blog",
+  },
   openGraph: {
-    title: "Blog | Bedo - Software Developer",
+    title: "Blog | Bedo - Software Engineer",
     description: "Read my thoughts on software development, entrepreneurship, and growth hacking.",
+    url: "/blog",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog | Bedo - Software Developer",
+    title: "Blog | Bedo - Software Engineer",
     description: "Read my thoughts on software development, entrepreneurship, and growth hacking.",
   },
 }
@@ -49,7 +53,7 @@ export default async function BlogPage() {
                 <div className="flex items-center gap-3 text-white/60 text-sm font-light mb-4">
                   <Calendar className="w-4 h-4" />
                   <time dateTime={post.date}>
-                    {new Date(post.date).toLocaleDateString('es-ES', {
+                    {new Date(post.date).toLocaleDateString('en-US', {
                       year: 'numeric',
                       month: 'long',
                       day: 'numeric',

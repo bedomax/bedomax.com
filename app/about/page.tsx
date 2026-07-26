@@ -5,15 +5,19 @@ import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "About Me",
-  description: "Learn more about Bedo - Software Developer, Entrepreneur, and Growth Hacker. 20 years building software, startups and ideas across Ecuador, Chile and beyond.",
+  description: "Learn more about Bedo - Software Engineer, Entrepreneur, and Growth Hacker. 20 years building software, startups and ideas across Ecuador, Chile and beyond.",
+  alternates: {
+    canonical: "/about",
+  },
   openGraph: {
-    title: "About Me | Bedo - Software Developer",
+    title: "About Me | Bedo - Software Engineer",
     description: "20 years building software, startups and ideas across Ecuador, Chile and beyond.",
+    url: "/about",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Me | Bedo - Software Developer",
+    title: "About Me | Bedo - Software Engineer",
     description: "20 years building software, startups and ideas across Ecuador, Chile and beyond.",
   },
 }
@@ -63,7 +67,7 @@ export default function AboutPage() {
             Building products that people actually use.
           </h1>
           <p className="mt-6 text-sm font-bold uppercase tracking-wide text-white/60">
-            Developer, Entrepreneur and Lifelong Builder
+            Software Engineer, Entrepreneur and Lifelong Builder
           </p>
 
           <div className="mt-14 flex flex-col items-start gap-8 md:flex-row md:items-center md:gap-14">
@@ -137,10 +141,10 @@ export default function AboutPage() {
               🇨🇱
             </p>
             <p className="mt-4 font-heading text-2xl font-bold text-white">Based in Chile</p>
-            <p className="mt-1 text-sm text-white/70">Vivo en Santiago de Chile</p>
+            <p className="mt-1 text-sm text-white/70">I live in Santiago, Chile</p>
             <p className="mt-8 max-w-[366px] text-base leading-[1.6] text-white/70">
-              Soy chileno, pero me crié en Ecuador. Estudié la universidad en Chile, donde participé en dos programas de
-              emprendimiento: Startup Chile y Chile Ventures. Viajo mucho entre los dos países.
+              I&apos;m Chilean, but I grew up in Ecuador. I went to university in Chile, where I took part in two
+              entrepreneurship programs: Startup Chile and Chile Ventures. I travel a lot between both countries.
             </p>
           </div>
           <div className="relative min-h-[280px] md:min-h-[456px] md:flex-1">
@@ -167,14 +171,14 @@ export default function AboutPage() {
             aria-hidden="true"
           />
           <div className="relative flex h-full min-h-[363px] flex-col items-center px-8 py-10">
-            <h2 className="self-start pl-4 text-xs font-bold uppercase text-[#290088] md:pl-8">Trabajo actual</h2>
+            <h2 className="self-start pl-4 text-xs font-bold uppercase text-[#290088] md:pl-8">Current work</h2>
             <div className="flex flex-1 items-center">
               <Image src="/images/lexgo-logo.png" alt="Lexgo" width={250} height={100} />
             </div>
             <p className="max-w-[474px] pb-2 text-center text-base leading-[1.6] text-[#290088]">
-              Desde 2021 trabajo en Lexgo, una startup chilena que simplifica los temas legales para otras startups.
-              Desarrollo activamente en la empresa y he sido testigo de su crecimiento constante, ayudando cada día a
-              más startups a crecer de forma legal y ordenada.
+              Since 2021 I&apos;ve worked at Lexgo, a Chilean startup that simplifies legal matters for other startups.
+              I actively build the product and have witnessed its steady growth, helping more startups every day grow
+              in a legal and organized way.
             </p>
           </div>
         </div>
@@ -189,14 +193,14 @@ export default function AboutPage() {
             aria-hidden="true"
           />
           <div className="relative flex h-full min-h-[363px] flex-col items-center px-8 py-10">
-            <h2 className="self-start pl-4 text-xs font-bold uppercase text-[#1a6418] md:pl-8">Proyecto paralelo</h2>
+            <h2 className="self-start pl-4 text-xs font-bold uppercase text-[#1a6418] md:pl-8">Side project</h2>
             <div className="flex flex-1 items-center">
               <Image src="/images/agrapp-logo.svg" alt="Agrapp" width={234} height={78} />
             </div>
             <p className="max-w-[474px] pb-2 text-center text-base leading-[1.6] text-[#1a6418]">
-              Desde 2018 desarrollo una app que ayuda a agricultores a conocer los costos de sus labores agrícolas.
-              Actualmente es utilizada en campos de Chile, Colombia, Panamá y República Dominicana. Cada mes publico
-              actualizaciones — es un proyecto que me apasiona.
+              Since 2018 I&apos;ve been building an app that helps farmers understand the costs of their agricultural
+              work. It&apos;s currently used on farms in Chile, Colombia, Panama and the Dominican Republic. I ship
+              updates every month — it&apos;s a project I&apos;m passionate about.
             </p>
           </div>
         </div>
@@ -212,7 +216,7 @@ export default function AboutPage() {
           className="object-cover"
         />
         <p className="absolute left-6 top-10 bg-brand-accent px-5 py-2 text-base leading-[1.6] text-brand-navy md:left-14">
-          📸 Foto tomada en los Pirineos de Navarra
+          📸 Photo taken in the Pyrenees of Navarra
         </p>
       </section>
 

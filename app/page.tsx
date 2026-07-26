@@ -5,17 +5,23 @@ import { Hero } from "@/components/hero"
 import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "Home",
-  description: "Welcome to Bedo's personal website - Software Developer, Entrepreneur, and Growth Hacker. Discover my projects, ideas, and everything that keeps me creating.",
+  title: {
+    absolute: "Bedo - Software Engineer, Entrepreneur & Growth Hacker",
+  },
+  description: "Welcome to Bedo's personal website - Software Engineer, Entrepreneur, and Growth Hacker building apps and platforms. Discover my projects, stories, and photography.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Bedo - Software Developer",
-    description: "Welcome to Bedo's personal website - Software Developer, Entrepreneur, and Growth Hacker.",
+    title: "Bedo - Software Engineer, Entrepreneur & Growth Hacker",
+    description: "Software Engineer building apps and platforms. Discover my projects, stories, and photography.",
+    url: "/",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bedo - Software Developer",
-    description: "Welcome to Bedo's personal website - Software Developer, Entrepreneur, and Growth Hacker.",
+    title: "Bedo - Software Engineer, Entrepreneur & Growth Hacker",
+    description: "Software Engineer building apps and platforms. Discover my projects, stories, and photography.",
   },
 }
 

@@ -6,14 +6,18 @@ import { ExternalLink, Github } from "lucide-react"
 export const metadata: Metadata = {
   title: "Projects",
   description: "Explore my portfolio of projects - web applications, mobile apps, and innovative solutions built with modern technologies.",
+  alternates: {
+    canonical: "/projects",
+  },
   openGraph: {
-    title: "Projects | Bedo - Software Developer",
+    title: "Projects | Bedo - Software Engineer",
     description: "Explore my portfolio of projects - web applications, mobile apps, and innovative solutions.",
+    url: "/projects",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Projects | Bedo - Software Developer",
+    title: "Projects | Bedo - Software Engineer",
     description: "Explore my portfolio of projects - web applications, mobile apps, and innovative solutions.",
   },
 }
