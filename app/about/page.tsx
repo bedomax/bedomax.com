@@ -62,23 +62,23 @@ export default function AboutPage() {
 
         <Header />
 
-        <div className="relative z-10 px-6 pt-16 md:px-14 md:pt-24">
-          <h1 className="max-w-[667px] font-heading text-[32px] font-bold leading-[1.15] text-white md:text-[42px]">
+        <div className="relative z-10 px-4 pt-8 sm:px-6 sm:pt-12 md:px-14 md:pt-20">
+          <h1 className="max-w-[667px] font-heading text-[28px] font-bold leading-[1.15] text-white sm:text-[32px] md:text-[42px]">
             Building products that people actually use.
           </h1>
-          <p className="mt-6 text-sm font-bold uppercase tracking-wide text-white/60">
+          <p className="mt-4 text-xs font-bold uppercase tracking-wide text-white/60 sm:mt-6 sm:text-sm">
             Software Engineer, Entrepreneur and Lifelong Builder
           </p>
 
-          <div className="mt-14 flex flex-col items-start gap-8 md:flex-row md:items-center md:gap-14">
+          <div className="mt-10 flex flex-col items-start gap-6 sm:mt-14 sm:gap-8 md:flex-row md:items-center md:gap-14">
             <Image
               src="/images/about-avatar.png"
               alt="Bedo Maximiliano Cáceres"
               width={119}
               height={118}
-              className="shrink-0 rounded-full"
+              className="size-20 shrink-0 rounded-full sm:size-[118px]"
             />
-            <p className="max-w-[711px] font-heading text-xl font-normal leading-[1.4] text-white md:text-2xl">
+            <p className="max-w-[711px] font-heading text-lg font-normal leading-[1.4] text-white sm:text-xl md:text-2xl">
               I&apos;ve spent the last <strong className="font-bold">20 years</strong> building software, startups and
               ideas across Ecuador, Chile and beyond.
             </p>
@@ -86,7 +86,7 @@ export default function AboutPage() {
         </div>
 
         {/* Timeline */}
-        <div className="relative z-10 grid grid-cols-1 gap-10 px-6 pb-24 pt-16 sm:grid-cols-2 md:px-14 lg:grid-cols-4 lg:gap-6">
+        <div className="relative z-10 grid grid-cols-1 gap-8 px-4 pb-16 pt-12 sm:grid-cols-2 sm:gap-10 sm:px-6 sm:pb-24 sm:pt-16 md:px-14 lg:grid-cols-4 lg:gap-6">
           {milestones.map((milestone, index) => (
             <div key={milestone.year} className="flex flex-col gap-4">
               <div className="flex w-full items-center" aria-hidden="true">
@@ -105,13 +105,13 @@ export default function AboutPage() {
 
       {/* Philosophy */}
       <section className="border border-white/15">
-        <div className="flex flex-col gap-10 px-6 py-16 md:flex-row md:gap-16 md:px-16 md:py-24">
+        <div className="flex flex-col gap-10 px-4 py-12 sm:px-6 sm:py-16 md:flex-row md:gap-16 md:px-16 md:py-24">
           <div className="flex flex-1 flex-col items-start gap-6">
-            <h2 className="font-heading text-[28px] font-bold leading-[1.3] text-white md:text-4xl">
+            <h2 className="font-heading text-[24px] font-bold leading-[1.3] text-white sm:text-[28px] md:text-4xl">
               I don&apos;t believe in building software.
             </h2>
             <div className="h-1 w-20 bg-brand-accent" aria-hidden="true" />
-            <p className="font-heading text-[28px] font-bold leading-[1.3] text-white md:text-4xl">
+            <p className="font-heading text-[24px] font-bold leading-[1.3] text-white sm:text-[28px] md:text-4xl">
               I believe in solving real problems.
             </p>
           </div>
@@ -135,7 +135,7 @@ export default function AboutPage() {
       {/* Location */}
       <section className="relative bg-brand-navy">
         <div className="flex flex-col md:flex-row md:items-stretch">
-          <div className="flex flex-col justify-center px-6 py-16 md:w-[40%] md:pl-24 md:pr-0">
+          <div className="flex flex-col justify-center px-4 py-12 sm:px-6 sm:py-16 md:w-[40%] md:pl-24 md:pr-0">
             <h2 className="text-xs font-bold uppercase text-white/50">Where I&apos;m Based</h2>
             <p className="mt-4 text-4xl" aria-hidden="true">
               🇨🇱
@@ -170,10 +170,10 @@ export default function AboutPage() {
             className="pointer-events-none object-cover opacity-35"
             aria-hidden="true"
           />
-          <div className="relative flex h-full min-h-[363px] flex-col items-center px-8 py-10">
-            <h2 className="self-start pl-4 text-xs font-bold uppercase text-[#290088] md:pl-8">Current work</h2>
+          <div className="relative flex h-full min-h-[320px] flex-col items-center px-5 py-8 sm:min-h-[363px] sm:px-8 sm:py-10">
+            <h2 className="self-start pl-2 text-xs font-bold uppercase text-[#290088] sm:pl-4 md:pl-8">Current work</h2>
             <div className="flex flex-1 items-center">
-              <Image src="/images/lexgo-logo.png" alt="Lexgo" width={250} height={100} />
+              <Image src="/images/lexgo-logo.png" alt="Lexgo" width={250} height={100} className="h-auto w-[180px] sm:w-[250px]" />
             </div>
             <p className="max-w-[474px] pb-2 text-center text-base leading-[1.6] text-[#290088]">
               Since 2021 I&apos;ve worked at Lexgo, a Chilean startup that simplifies legal matters for other startups.
@@ -192,10 +192,10 @@ export default function AboutPage() {
             className="pointer-events-none object-cover"
             aria-hidden="true"
           />
-          <div className="relative flex h-full min-h-[363px] flex-col items-center px-8 py-10">
-            <h2 className="self-start pl-4 text-xs font-bold uppercase text-[#1a6418] md:pl-8">Side project</h2>
+          <div className="relative flex h-full min-h-[320px] flex-col items-center px-5 py-8 sm:min-h-[363px] sm:px-8 sm:py-10">
+            <h2 className="self-start pl-2 text-xs font-bold uppercase text-[#1a6418] sm:pl-4 md:pl-8">Side project</h2>
             <div className="flex flex-1 items-center">
-              <Image src="/images/agrapp-logo.svg" alt="Agrapp" width={234} height={78} />
+              <Image src="/images/agrapp-logo.svg" alt="Agrapp" width={234} height={78} className="h-auto w-[170px] sm:w-[234px]" />
             </div>
             <p className="max-w-[474px] pb-2 text-center text-base leading-[1.6] text-[#1a6418]">
               Since 2018 I&apos;ve been building an app that helps farmers understand the costs of their agricultural
@@ -215,7 +215,7 @@ export default function AboutPage() {
           sizes="100vw"
           className="object-cover"
         />
-        <p className="absolute left-6 top-10 bg-brand-accent px-5 py-2 text-base leading-[1.6] text-brand-navy md:left-14">
+        <p className="absolute left-4 top-6 max-w-[calc(100%-2rem)] bg-brand-accent px-3 py-2 text-sm leading-[1.6] text-brand-navy sm:left-6 sm:top-10 sm:max-w-none sm:px-5 sm:text-base md:left-14">
           📸 Photo taken in the Pyrenees of Navarra
         </p>
       </section>
