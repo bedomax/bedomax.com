@@ -1,45 +1,41 @@
-import { Instagram, Facebook, Linkedin, Github, Music, Smile } from "lucide-react"
 import Image from "next/image"
 
+const socialLinks = [
+  { name: "INSTAGRAM", href: "https://instagram.com/bedomax" },
+  { name: "X", href: "https://x.com/bedomax" },
+  { name: "FACEBOOK", href: "https://facebook.com/bedomax" },
+  { name: "LINKEDIN", href: "https://www.linkedin.com/in/bedomax/" },
+  { name: "GITHUB", href: "https://github.com/bedomax" },
+  { name: "SPOTIFY", href: "https://open.spotify.com/user/bedomax" },
+]
+
 export function Footer() {
-  const socialLinks = [
-    { name: "INSTAGRAM", icon: Instagram, href: "https://instagram.com" },
-    { name: "X", icon: null, href: "https://x.com" },
-    { name: "FACEBOOK", icon: Facebook, href: "https://facebook.com" },
-    { name: "LINKEDIN", icon: Linkedin, href: "https://linkedin.com" },
-    { name: "GITHUB", icon: Github, href: "https://github.com" },
-    { name: "SPOTIFY", icon: Music, href: "https://spotify.com" },
-  ]
-
   return (
-    <footer className="relative z-10 bg-[#1E3A8A] px-8 py-6">
-      <div className="flex items-center justify-between">
-        {/* Profile Image */}
-        <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white/20">
-          <Image src="/professional-headshot.png" alt="Profile" width={64} height={64} className="object-cover" />
-        </div>
+    <footer className="relative z-10 bg-brand-700 px-6 py-5 md:px-14">
+      <div className="flex flex-wrap items-center gap-x-10 gap-y-4 md:gap-x-14">
+        <Image
+          src="/images/avatar.png"
+          alt="Bedo Maximiliano Cáceres"
+          width={48}
+          height={48}
+          className="rounded-full"
+        />
 
-        {/* Social Links */}
-        <div className="flex items-center gap-8">
+        <nav aria-label="Social links" className="flex flex-1 flex-wrap items-center gap-x-8 gap-y-2 md:gap-x-12">
           {socialLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/60 text-xs font-light tracking-wide hover:text-white transition-colors flex items-center gap-2"
+              className="text-sm text-white/50 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-accent"
             >
-              {link.icon && <link.icon className="w-4 h-4" />}
-              {link.name === "X" && <span className="text-sm font-semibold">𝕏</span>}
-              <span className="hidden md:inline">{link.name}</span>
+              {link.name}
             </a>
           ))}
-        </div>
+        </nav>
 
-        {/* Smiley Icon */}
-        <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
-          <Smile className="w-6 h-6 text-white" />
-        </div>
+        <Image src="/images/footer-emoji.svg" alt="" width={27} height={25} aria-hidden="true" />
       </div>
     </footer>
   )
