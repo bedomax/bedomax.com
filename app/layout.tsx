@@ -15,14 +15,14 @@ const lato = Lato({
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["700"],
+  weight: ["400", "700"],
   variable: "--font-montserrat",
   display: "swap",
 })
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://bedomax.com"
-const siteName = "Bedo - Software Developer"
-const siteDescription = "Personal website of Bedo - Software Developer, Entrepreneur, and Growth Hacker. Sharing projects, ideas, and everything that keeps me creating."
+const siteName = "Bedo - Software Engineer"
+const siteDescription = "Personal website of Bedo - Software Engineer, Entrepreneur, and Growth Hacker. Sharing projects, ideas, and everything that keeps me creating."
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -32,6 +32,7 @@ export const metadata: Metadata = {
   },
   description: siteDescription,
   keywords: [
+    "Software Engineer",
     "Software Developer",
     "Entrepreneur",
     "Growth Hacker",
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     "React",
     "Next.js",
     "TypeScript",
-    "JavaScript",
+    "Ruby on Rails",
     "Bedo",
     "bedomax",
   ],
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "es_ES",
+    locale: "en_US",
     url: siteUrl,
     siteName: siteName,
     title: siteName,
@@ -96,9 +97,8 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/manifest.json",
-  alternates: {
-    canonical: siteUrl,
-  },
+  // NOTE: no site-wide canonical here — Next.js metadata inheritance would make
+  // every route canonicalize to the homepage. Each page declares its own.
   verification: {
     // Add your verification codes here when available
     // google: "your-google-verification-code",
@@ -116,16 +116,23 @@ export default function RootLayout({
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Bedo",
+    name: "Bedo Maximiliano Cáceres",
+    alternateName: "Bedo",
     url: siteUrl,
-    jobTitle: "Software Developer",
+    jobTitle: "Software Engineer",
     description: siteDescription,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Santiago",
+      addressCountry: "CL",
+    },
     sameAs: [
       "https://github.com/bedomax",
-      "https://linkedin.com/in/bedomax",
-      "https://twitter.com/bedomax",
+      "https://www.linkedin.com/in/bedomax/",
+      "https://x.com/bedomax",
+      "https://instagram.com/bedomax",
     ],
-    image: `${siteUrl}/professional-headshot.png`,
+    image: `${siteUrl}/images/about-avatar.png`,
   }
 
   const websiteSchema = {
@@ -141,7 +148,7 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body className={`${lato.variable} ${montserrat.variable} font-sans antialiased`}>
         <script
           type="application/ld+json"

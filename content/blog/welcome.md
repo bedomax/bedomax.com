@@ -31,7 +31,7 @@ In the era of social media, a blog is still the best place to:
 
 This blog is built with:
 
-- **Next.js 15** - React framework
+- **Next.js** - React framework
 - **Markdown** - For writing posts
 - **GitHub** - As CMS
 - **Vercel** - For automatic deployment
