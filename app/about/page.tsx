@@ -1,89 +1,220 @@
 import { Metadata } from "next"
+import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "About Me",
-  description: "Learn more about Bedo - Software Developer, Entrepreneur, and Growth Hacker. Discover my journey, skills, and passion for creating innovative solutions.",
+  description: "Learn more about Bedo - Software Developer, Entrepreneur, and Growth Hacker. 20 years building software, startups and ideas across Ecuador, Chile and beyond.",
   openGraph: {
     title: "About Me | Bedo - Software Developer",
-    description: "Learn more about Bedo - Software Developer, Entrepreneur, and Growth Hacker.",
+    description: "20 years building software, startups and ideas across Ecuador, Chile and beyond.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "About Me | Bedo - Software Developer",
-    description: "Learn more about Bedo - Software Developer, Entrepreneur, and Growth Hacker.",
+    description: "20 years building software, startups and ideas across Ecuador, Chile and beyond.",
   },
 }
 
+const milestones = [
+  {
+    year: "2005",
+    title: "Started programming",
+    description: "Discovered my passion for lines of code and logical problem solving.",
+  },
+  {
+    year: "2015",
+    title: "Built my first SaaS",
+    description: "Stepped into product design, bootstrapping and finding real market fits.",
+  },
+  {
+    year: "2025",
+    title: "Founded Businesses",
+    description: "Creating digital infrastructure for modern enterprises in South America.",
+  },
+  {
+    year: "Today",
+    title: "Building with AI",
+    description: "Pioneering new automated products that augment human intelligence.",
+  },
+]
+
 export default function AboutPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#3B5BDB] via-[#2B4BC0] to-[#1E3A8A] relative overflow-hidden">
-      {/* Decorative background shapes */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#2B4BC0] rounded-full opacity-30 blur-3xl" />
-        <div className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-[#1E3A8A] rounded-full opacity-40 blur-3xl" />
-        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-[#2B4BC0] rounded-full opacity-25 blur-3xl" />
-      </div>
+    <div className="flex min-h-screen flex-col bg-brand-500">
+      {/* Hero + timeline share the background image, per design */}
+      <section className="relative overflow-hidden">
+        <Image
+          src="/images/about-hero-background.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="pointer-events-none object-cover"
+          aria-hidden="true"
+        />
 
-      <Header />
-      
-      <main className="relative z-10 flex-1 flex items-center justify-center px-8 py-32">
-        <div className="max-w-4xl w-full">
-          <h1 className="text-white text-6xl font-extrabold mb-8 tracking-tight">About Me</h1>
-          
-          <div className="space-y-8 text-white/90">
-            <section className="space-y-4">
-              <h2 className="text-2xl font-bold text-white mb-4">Who I Am</h2>
-              <p className="text-lg font-light leading-relaxed">
-                Hey! I'm Bedo, a passionate Software Developer, Entrepreneur, and Growth Hacker. 
-                I love building innovative solutions and turning ideas into reality through code.
-              </p>
-            </section>
+        <Header />
 
-            <section className="space-y-4">
-              <h2 className="text-2xl font-bold text-white mb-4">My Journey</h2>
-              <p className="text-lg font-light leading-relaxed">
-                My journey in tech started with curiosity and a drive to solve problems. 
-                Over the years, I've worked on various projects, from web applications to 
-                mobile solutions, always focusing on user experience and performance.
-              </p>
-            </section>
+        <div className="relative z-10 px-6 pt-16 md:px-14 md:pt-24">
+          <h1 className="max-w-[667px] font-heading text-[32px] font-bold leading-[1.15] text-white md:text-[42px]">
+            Building products that people actually use.
+          </h1>
+          <p className="mt-6 text-sm font-bold uppercase tracking-wide text-white/60">
+            Developer, Entrepreneur and Lifelong Builder
+          </p>
 
-            <section className="space-y-4">
-              <h2 className="text-2xl font-bold text-white mb-4">Skills & Expertise</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <h3 className="text-xl font-semibold text-[#F5C542]">Frontend</h3>
-                  <p className="text-base font-light">React, Next.js, TypeScript, Tailwind CSS</p>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-xl font-semibold text-[#F5C542]">Backend</h3>
-                  <p className="text-base font-light">Node.js, APIs, Databases</p>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-xl font-semibold text-[#F5C542]">Tools</h3>
-                  <p className="text-base font-light">Git, Docker, CI/CD, Cloud Services</p>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-xl font-semibold text-[#F5C542]">Business</h3>
-                  <p className="text-base font-light">Growth Hacking, Product Strategy, Marketing</p>
-                </div>
-              </div>
-            </section>
-
-            <section className="space-y-4">
-              <h2 className="text-2xl font-bold text-white mb-4">What I Do</h2>
-              <p className="text-lg font-light leading-relaxed">
-                I create digital experiences that matter. Whether it's building a web application, 
-                optimizing for growth, or helping startups scale, I'm always ready to take on new challenges 
-                and learn something new.
-              </p>
-            </section>
+          <div className="mt-14 flex flex-col items-start gap-8 md:flex-row md:items-center md:gap-14">
+            <Image
+              src="/images/about-avatar.png"
+              alt="Bedo Maximiliano Cáceres"
+              width={119}
+              height={118}
+              className="shrink-0 rounded-full"
+            />
+            <p className="max-w-[711px] font-heading text-xl font-normal leading-[1.4] text-white md:text-2xl">
+              I&apos;ve spent the last <strong className="font-bold">20 years</strong> building software, startups and
+              ideas across Ecuador, Chile and beyond.
+            </p>
           </div>
         </div>
-      </main>
+
+        {/* Timeline */}
+        <div className="relative z-10 grid grid-cols-1 gap-10 px-6 pb-24 pt-16 sm:grid-cols-2 md:px-14 lg:grid-cols-4 lg:gap-6">
+          {milestones.map((milestone, index) => (
+            <div key={milestone.year} className="flex flex-col gap-4">
+              <div className="flex w-full items-center" aria-hidden="true">
+                <div className="size-3 shrink-0 rounded-full bg-white" />
+                {index < milestones.length - 1 && <div className="hidden h-0.5 flex-1 bg-white/15 lg:block" />}
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <h3 className="font-heading text-xl font-bold text-white">{milestone.year}</h3>
+                <p className="text-sm font-bold text-white">{milestone.title}</p>
+                <p className="text-xs leading-[1.4] text-white/70">{milestone.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Philosophy */}
+      <section className="border border-white/15">
+        <div className="flex flex-col gap-10 px-6 py-16 md:flex-row md:gap-16 md:px-16 md:py-24">
+          <div className="flex flex-1 flex-col items-start gap-6">
+            <h2 className="font-heading text-[28px] font-bold leading-[1.3] text-white md:text-4xl">
+              I don&apos;t believe in building software.
+            </h2>
+            <div className="h-1 w-20 bg-brand-accent" aria-hidden="true" />
+            <p className="font-heading text-[28px] font-bold leading-[1.3] text-white md:text-4xl">
+              I believe in solving real problems.
+            </p>
+          </div>
+          <div className="flex flex-1 flex-col gap-6">
+            <p className="text-base leading-[1.6] text-white/70">
+              Technology is just a tool. The real magic happens when you identify an operational friction, understand
+              the human element behind it, and address it completely.
+            </p>
+            <p className="text-base leading-[1.6] text-white/70">
+              I care about simple solutions, clean and maintainable codebases, and building high-trust agile teams that
+              love to execute fast.
+            </p>
+            <p className="flex items-center gap-2 text-base font-bold text-white">
+              <span className="inline-block h-0.5 w-4 rotate-[15deg] bg-brand-accent" aria-hidden="true" />
+              Always learning. Always shipping.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Location */}
+      <section className="relative bg-brand-navy">
+        <div className="flex flex-col md:flex-row md:items-stretch">
+          <div className="flex flex-col justify-center px-6 py-16 md:w-[40%] md:pl-24 md:pr-0">
+            <h2 className="text-xs font-bold uppercase text-white/50">Where I&apos;m Based</h2>
+            <p className="mt-4 text-4xl" aria-hidden="true">
+              🇨🇱
+            </p>
+            <p className="mt-4 font-heading text-2xl font-bold text-white">Based in Chile</p>
+            <p className="mt-1 text-sm text-white/70">Vivo en Santiago de Chile</p>
+            <p className="mt-8 max-w-[366px] text-base leading-[1.6] text-white/70">
+              Soy chileno, pero me crié en Ecuador. Estudié la universidad en Chile, donde participé en dos programas de
+              emprendimiento: Startup Chile y Chile Ventures. Viajo mucho entre los dos países.
+            </p>
+          </div>
+          <div className="relative min-h-[280px] md:min-h-[456px] md:flex-1">
+            <Image
+              src="/images/santiago-skyline.png"
+              alt="Illustration of the Santiago de Chile skyline with the Andes"
+              fill
+              sizes="(max-width: 768px) 100vw, 60vw"
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Work cards */}
+      <section className="flex flex-col md:flex-row">
+        <div className="relative flex-1 overflow-hidden bg-white">
+          <Image
+            src="/images/work-card-lexgo-bg.jpg"
+            alt=""
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="pointer-events-none object-cover opacity-35"
+            aria-hidden="true"
+          />
+          <div className="relative flex h-full min-h-[363px] flex-col items-center px-8 py-10">
+            <h2 className="self-start pl-4 text-xs font-bold uppercase text-[#290088] md:pl-8">Trabajo actual</h2>
+            <div className="flex flex-1 items-center">
+              <Image src="/images/lexgo-logo.png" alt="Lexgo" width={250} height={100} />
+            </div>
+            <p className="max-w-[474px] pb-2 text-center text-base leading-[1.6] text-[#290088]">
+              Desde 2021 trabajo en Lexgo, una startup chilena que simplifica los temas legales para otras startups.
+              Desarrollo activamente en la empresa y he sido testigo de su crecimiento constante, ayudando cada día a
+              más startups a crecer de forma legal y ordenada.
+            </p>
+          </div>
+        </div>
+
+        <div className="relative flex-1 overflow-hidden">
+          <Image
+            src="/images/work-card-agrapp-bg.jpg"
+            alt=""
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="pointer-events-none object-cover"
+            aria-hidden="true"
+          />
+          <div className="relative flex h-full min-h-[363px] flex-col items-center px-8 py-10">
+            <h2 className="self-start pl-4 text-xs font-bold uppercase text-[#1a6418] md:pl-8">Proyecto paralelo</h2>
+            <div className="flex flex-1 items-center">
+              <Image src="/images/agrapp-logo.svg" alt="Agrapp" width={234} height={78} />
+            </div>
+            <p className="max-w-[474px] pb-2 text-center text-base leading-[1.6] text-[#1a6418]">
+              Desde 2018 desarrollo una app que ayuda a agricultores a conocer los costos de sus labores agrícolas.
+              Actualmente es utilizada en campos de Chile, Colombia, Panamá y República Dominicana. Cada mes publico
+              actualizaciones — es un proyecto que me apasiona.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Photo band */}
+      <section className="relative h-[320px] md:h-[480px]">
+        <Image
+          src="/images/pyrenees.jpg"
+          alt="Snowy mountain landscape in the Pyrenees of Navarra"
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+        <p className="absolute left-6 top-10 bg-brand-accent px-5 py-2 text-base leading-[1.6] text-brand-navy md:left-14">
+          📸 Foto tomada en los Pirineos de Navarra
+        </p>
+      </section>
 
       <Footer />
     </div>
